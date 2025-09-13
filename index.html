@@ -10,9 +10,19 @@
   </head>
 
   <body>
-      <div class="clickable-box" id="popupTrigger">
-    ➕ Add Task
-  </div>
+     <dialog id="taskDialog">
+      <h2>Task</h2>
+      <label for="taskTitle">Title:</label>
+      <input type="text" id="taskTitle" name="taskTitle" required/>
+      <br/>
+      <label for="taskDescription">Description:</label>
+      <textarea id="taskDescription" name="taskDescription" required></textarea>
+      <br/>
+      <select id="taskStatus" name="taskStatus">
+        <option value="todo">todo</option>
+        <option value="doing">doing</option>
+        <option value="done">done</option>
+     </dialog>
     <container class="container">
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav>
