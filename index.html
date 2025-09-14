@@ -53,9 +53,9 @@
               </div>
               <!-- Tasks container for DOING -->
               <div class="tasks-doing">
-                <div class="task">Master JavaScript 💛</div>
+                <!-- <div class="task">Master JavaScript 💛</div>
                 <div class="task">Keep on Going 🏆</div>
-                <div class="task">Understand Databases ⚙️</div>
+                <div class="task">Understand Databases ⚙️</div> -->
               </div>
             </div>
             <!-- DONE Column -->
@@ -65,8 +65,8 @@
               </div>
               <!-- Tasks container for DONE -->
               <div class="tasks-done">
-                <div class="task">Contribute to Open Source Projects 🌐</div>
-                <div class="task">Build Portfolio Projects 🛠️</div>
+                <!-- <div class="task">Contribute to Open Source Projects 🌐</div>
+                <div class="task">Build Portfolio Projects 🛠️</div> -->
               </div>
             </div>
           </main>
@@ -76,8 +76,9 @@
     </container>
   </body>
   <dialog id="taskDialog">
+      <span id="closeDialog" style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:2em;color:red;" onclick="dialog.close()";>&times;</span>
       <h2>Task</h2>
-      <label for="taskTitle">Title</label>
+      <label class="dialoglabel"for="taskTitle">Title</label>
       <input type="text" id="taskTitle" name="taskTitle" value="" required/>
       <br/>
       <label for="taskDescription">Description</label>
@@ -88,5 +89,6 @@
         <option value="todo">todo</option>
         <option value="doing">doing</option>
         <option value="done">done</option>
-     </dialog> 
+      </select>
+  </dialog> 
 </html>

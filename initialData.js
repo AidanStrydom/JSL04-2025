@@ -54,23 +54,49 @@ const initialTasks = [
       document.querySelector(".tasks-todo").appendChild(div);
     });
 
-    // Close modal
-    // closeBtn.onclick = () => modal.style.display = "none";
-    // window.onclick = (e) => {
-    //   if (e.target === modal) modal.style.display = "none";
-    // };
+    const doingTasks = initialTasks.filter(t => t.status === "doing");
+
+    // Generate tasks from array
+    doingTasks.forEach(element => {
+      const div = document.createElement("div");
+      div.className = "task";
+      div.textContent = element.title;
+      div.onclick = () => displayModal(element.id);
+      document.querySelector(".tasks-doing").appendChild(div);
+    });
+
+    const doneTasks = initialTasks.filter(t => t.status === "done");
+
+    // Generate tasks from array
+    doneTasks.forEach(element => {
+      const div = document.createElement("div");
+      div.className = "task";
+      div.textContent = element.title;
+      div.onclick = () => displayModal(element.id);
+      document.querySelector(".tasks-done").appendChild(div);
+    });
+
+ 
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const closeIcon = document.getElementById("closeDialog");
+      const dialog = document.getElementById("taskDialog");
+      if (closeIcon && dialog) {
+      closeIcon.onclick = () => dialog.close();
+      }
+    });
 
     function displayModal(id) {
       const task = initialTasks.find(t => t.id === id);
-      console.log(task);
-
+    
       // populate the dialog with task details
+
       const dialog = document.getElementById("taskDialog");
-      let titleInput = dialog.querySelector('input[name="task-title"]');
+      let titleInput = dialog.querySelector('input[name="taskTitle"]');
       titleInput.value = task.title;
-      let descInput = dialog.querySelector('textarea[name="task-description"]');
+      let descInput = dialog.querySelector('textarea[name="taskDescription"]');
       descInput.value = task.description;
-      let statusSelect = dialog.querySelector('select[name="task-status"]');
+      let statusSelect = dialog.querySelector('select[name="taskStatus"]');
       statusSelect.value = task.status;
       dialog.showModal();
     }

@@ -131,6 +131,28 @@ button {
 
 }
 
+#taskDialog {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 8px;
+    width: 30%;
+    height: 40%;
+    font-family: Plus Jakarta Sans;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+#taskDescription {
+    resize: none;
+    height: 50%;
+}
+
+dialog::backdrop {
+  background-color: rgba(128, 128, 128, 0.7); /* Grey with 70% opacity */
+}
+
 @media (max-width: 700px) {
     button {
         font-size: 10px; /* to make button contain on shrinking screen */
@@ -164,19 +186,9 @@ button {
     height: auto;
     margin-left: 10px;
   }
-}
-
-#taskDialog {
-    display: flex;
-    flex-direction: column;
-    border: none;
-    border-radius: 8px;
-    width: 30%;
-    height: 40%;
-    font-family: Plus Jakarta Sans;
-}
-
-#taskDescription {
-    resize: none;
+  #taskDialog {
+    width: 75%;
     height: 50%;
+  }
 }
+
