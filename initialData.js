@@ -17,6 +17,7 @@ const initialTasks = [
     description: "You're almost there",
     status: "doing",
   },
+  
 
   {
     id: 11,
@@ -39,7 +40,23 @@ const initialTasks = [
       "Create a portfolio showcasing your skills and projects to potential employers",
     status: "done",
   },
+  {
+   id: 14,
+   title: "Conquer Svelt ⚛️",
+   description: 
+    "Learn Svelt and build amazing web apps",
+    status: "todo",
+  },
+  {
+    id: 15,
+    title: "Crush Frameworks🖼️",
+    description: 
+      "Get comfortable with React, Angular, and Vue",
+    status: "todo",
+  }
 ];
+
+   // makes it visible
 // test code
    
 
@@ -85,6 +102,9 @@ const initialTasks = [
       closeIcon.onclick = () => dialog.close();
       }
     });
+
+   
+
 
     function displayModal(id) {
       const task = initialTasks.find(t => t.id === id);

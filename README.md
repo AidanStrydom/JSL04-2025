@@ -2,32 +2,9 @@
 
 ## Overview
 
-In this project, you will dynamically display tasks from the **given initial data** on the DOM using JavaScript. Tasks should be placed into the correct **Kanban board columns** based on their status, and clicking a task should open a **modal** where users can view and modify task details. The project emphasizes **DOM manipulation, event handling, modular JavaScript structure, and responsive UI implementation.**
+This projects tests my ability to make code that can be manipulated one direction through the DOM (Document Object Model). There is a hidden element, a modal (dialog), that is accessible through clicking on one of the task elements. Information is fed into the modal through array data in the JS file, accessed through unique IDS and completed by assigning values where originally there was none. I struggled a lot with this project but eventually understanding value assignments helped me unlock how to make the page work, and it was incredibly satisfying. 
 
-## Before You Begin
-
-**Check the project user stories in your student dashboard and the updated Figma Design** before you start building.
-
-## Figma Design Link
-
-Check the updated Figma Design: [Figma Link](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=0-1&p=f&t=Ki0CZk0RAjrk9Fhs-0)
-
-## Key Objectives
-
-### Dynamic Task Display & Interaction
-
-- Dynamically generate **task elements** from the given initial data and insert them into the DOM.
-- Ensure tasks are placed in the **correct columns** ("To Do", "In Progress", "Done") based on their status.
-- Clicking a task should **open a modal** displaying its details.
-- The modal should include:
-  - **Editable input fields** for the task title and description.
-  - **A select dropdown** showing the current status with other status options available.
-  - **A close button** that allows users to exit the modal easily.
-
-### Design & Responsiveness
-
-- Ensure the **modal matches the Figma design**, including a **backdrop effect** for focus.
-- Implement a **fully responsive modal** that works on both desktop and mobile devices.
+The dialog element, function, event listener and psuedo functions all created headaches but eventually led to a satsifying and understandable piece of working code.
 
 ### Code Structure & Maintainability
 
