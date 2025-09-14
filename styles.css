@@ -165,3 +165,18 @@ button {
     margin-left: 10px;
   }
 }
+
+#taskDialog {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 8px;
+    width: 30%;
+    height: 40%;
+    font-family: Plus Jakarta Sans;
+}
+
+#taskDescription {
+    resize: none;
+    height: 50%;
+}

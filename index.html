@@ -6,23 +6,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <script src="initialData.js"></script>
+    <script defer src="initialData.js"></script>
   </head>
 
   <body>
-     <!--<dialog id="taskDialog">
-      <h2>Task</h2>
-      <label for="taskTitle">Title:</label>
-      <input type="text" id="taskTitle" name="taskTitle" required/>
-      <br/>
-      <label for="taskDescription">Description:</label>
-      <textarea id="taskDescription" name="taskDescription" required></textarea>
-      <br/>
-      <select id="taskStatus" name="taskStatus">
-        <option value="todo">todo</option>
-        <option value="doing">doing</option>
-        <option value="done">done</option>
-     </dialog> -->
+    
     <container class="container"> 
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav>
@@ -35,70 +23,68 @@
 
     <div class="header-main">
     <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
-    <div class="header">
-      <header>
-        <div>
-          <img src="logo-light.svg" alt="logo" class="logo-small"/>
-          <h2 class="launch-career">Launch Career</h2>
+      <div class="header">
+        <header>
+          <div>
+            <img src="logo-light.svg" alt="logo" class="logo-small"/>
+            <h2 class="launch-career">Launch Career</h2>
+          </div>
+        </header>
         </div>
-      </header>
-      </div>
 
-      <div>
-        <main class="columns">
-          <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
-          <div>
+        <div>
+          <main class="columns">
+            <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
             <div>
-              
-              <h4 class="todo"><span class="circle-1"></span>TODO (2)</h4>
+              <div>
+                <h4 class="todo"><span class="circle-1"></span>TODO (2)</h4>
+              </div>
+              <!-- Tasks container for TODO -->
+              <div class="tasks-todo">
+                <!-- <div class="task" onclick="document.getElementById('taskDialog').showModal()">Launch Epic Career 🚀</div>
+                <div class="task">Learn Data Structures and Algorithms 📚</div>
+                <div class="task">Crush Frameworks 🖼️</div>  -->
+              </div>
             </div>
-            <!-- Tasks container for TODO -->
-            <div class="tasks-todo">
-              <div class="task" onclick="document.getElementById('taskDialog').showModal()">Launch Epic Career 🚀</div>
-              <div class="task">Learn Data Structures and Algorithms 📚</div>
-              <div class="task">Crush Frameworks 🖼️</div>
-            </div>
-          </div>
-          <!-- DOING Column -->
-          <div>
+            <!-- DOING Column -->
             <div>
-              
-              <h4 class="doing"><span class="circle-2"></span>DOING (2)</h4>
+              <div>
+                <h4 class="doing"><span class="circle-2"></span>DOING (2)</h4>
+              </div>
+              <!-- Tasks container for DOING -->
+              <div class="tasks-doing">
+                <div class="task">Master JavaScript 💛</div>
+                <div class="task">Keep on Going 🏆</div>
+                <div class="task">Understand Databases ⚙️</div>
+              </div>
             </div>
-            <!-- Tasks container for DOING -->
-            <div class="tasks-doing">
-              <div class="task">Master JavaScript 💛</div>
-              <div class="task">Keep on Going 🏆</div>
-              <div class="task">Understand Databases ⚙️</div>
-            </div>
-          </div>
-          <!-- DONE Column -->
-          <div>
+            <!-- DONE Column -->
             <div>
-              
-              <h4 class="done"><span class="circle-3"></span>DONE (2)</h4>
+              <div>
+                <h4 class="done"><span class="circle-3"></span>DONE (2)</h4>
+              </div>
+              <!-- Tasks container for DONE -->
+              <div class="tasks-done">
+                <div class="task">Contribute to Open Source Projects 🌐</div>
+                <div class="task">Build Portfolio Projects 🛠️</div>
+              </div>
             </div>
-            <!-- Tasks container for DONE -->
-            <div class="tasks-done">
-              <div class="task">Contribute to Open Source Projects 🌐</div>
-              <div class="task">Build Portfolio Projects 🛠️</div>
-            </div>
-          </div>
-        </main>
-      </div>
+          </main>
+        </div>
       </div>
     
     </container>
   </body>
   <dialog id="taskDialog">
       <h2>Task</h2>
-      <label for="taskTitle">Title:</label>
-      <input type="text" id="taskTitle" name="taskTitle" required/>
+      <label for="taskTitle">Title</label>
+      <input type="text" id="taskTitle" name="taskTitle" value="" required/>
       <br/>
-      <label for="taskDescription">Description:</label>
-      <textarea id="taskDescription" name="taskDescription" required></textarea>
+      <label for="taskDescription">Description</label>
+      <textarea id="taskDescription" name="taskDescription" value="" rows="4"></textarea>
       <br/>
-      <select id="taskStatus" name="taskStatus">
+      <label for ="taskStatus">Status</label>
+      <select id="taskStatus" name="taskStatus" value="">
         <option value="todo">todo</option>
         <option value="doing">doing</option>
         <option value="done">done</option>

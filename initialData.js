@@ -41,71 +41,36 @@ const initialTasks = [
   },
 ];
 // test code
- // Array to store submitted tasks
-    /*const tasks = [];
+   
 
-    const trigger = document.getElementById("popupTrigger");
+    const todoTasks = initialTasks.filter(t => t.status === "todo");
 
-    trigger.onclick = () => {
-      // Create overlay
-      const overlay = document.createElement("div");
-      overlay.className = "popup-overlay";
+    // Generate tasks from array
+    todoTasks.forEach(element => {
+      const div = document.createElement("div");
+      div.className = "task";
+      div.textContent = element.title;
+      div.onclick = () => displayModal(element.id);
+      document.querySelector(".tasks-todo").appendChild(div);
+    });
 
-      // Create popup
-      const popup = document.createElement("div");
-      popup.className = "popup";
-      popup.innerHTML = `
-        <h2>Add a Task</h2>
-        <label for="taskName">Name</label>
-        <input type="text" id="taskName" placeholder="Enter task name">
+    // Close modal
+    // closeBtn.onclick = () => modal.style.display = "none";
+    // window.onclick = (e) => {
+    //   if (e.target === modal) modal.style.display = "none";
+    // };
 
-        <label for="taskDesc">Description</label>
-        <textarea id="taskDesc" placeholder="Enter task description"></textarea>
+    function displayModal(id) {
+      const task = initialTasks.find(t => t.id === id);
+      console.log(task);
 
-        <label for="taskStatus">Status</label>
-        <select id="taskStatus">
-          <option value="todo">To Do</option>
-          <option value="doing">Doing</option>
-          <option value="done">Done</option>
-        </select>
-
-        <button id="submitForm">Submit</button>
-        <button id="closePopup">Close</button>
-      `;
-
-      overlay.appendChild(popup);
-      document.body.appendChild(overlay);
-
-      // Close button
-      popup.querySelector("#closePopup").onclick = () => {
-        overlay.remove();
-      };
-
-      // Handle submit button
-      popup.querySelector("#submitForm").onclick = () => {
-        const name = popup.querySelector("#taskName").value.trim();
-        const desc = popup.querySelector("#taskDesc").value.trim();
-        const status = popup.querySelector("#taskStatus").value;
-
-        if (!name) {
-          alert("Please enter a task name.");
-          return;
-        }
-
-        // Store as an object
-        const task = { name, description: desc, status };
-        tasks.push(task);
-
-        // Log array to console
-        console.log("Tasks:", tasks);
-
-        overlay.remove(); // close popup after submit
-      };
-
-      // Click outside closes
-      overlay.onclick = (e) => {
-        if (e.target === overlay) {
-          overlay.remove();
-        }
-      };
-    };*/
+      // populate the dialog with task details
+      const dialog = document.getElementById("taskDialog");
+      let titleInput = dialog.querySelector('input[name="task-title"]');
+      titleInput.value = task.title;
+      let descInput = dialog.querySelector('textarea[name="task-description"]');
+      descInput.value = task.description;
+      let statusSelect = dialog.querySelector('select[name="task-status"]');
+      statusSelect.value = task.status;
+      dialog.showModal();
+    }
