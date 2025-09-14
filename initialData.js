@@ -1,4 +1,4 @@
-/*const initialTasks = [
+const initialTasks = [
   {
     id: 1,
     title: "Launch Epic Career 🚀",
@@ -39,10 +39,10 @@
       "Create a portfolio showcasing your skills and projects to potential employers",
     status: "done",
   },
-];*/
+];
 // test code
  // Array to store submitted tasks
-    const tasks = [];
+    /*const tasks = [];
 
     const trigger = document.getElementById("popupTrigger");
 
@@ -108,4 +108,4 @@
           overlay.remove();
         }
       };
-    };
+    };*/
